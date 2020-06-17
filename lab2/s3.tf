@@ -4,7 +4,7 @@
 # Development Environment: OS X 10.13.6/Terraform v0.12.24
 #
 locals {
-  bucket_name = format("%s-lab1", terraform.workspace)
+  bucket_name = format("%s-lab2", terraform.workspace)
 
   error_html = format("%s/%s", var.source_directory, "error.html")
   index_html = format("%s/%s", var.source_directory, "index.html")
@@ -21,10 +21,10 @@ data "aws_iam_policy_document" "bucket_policy" {
   }
 }
 
-resource "aws_s3_bucket" "lab1_bucket" {
+resource "aws_s3_bucket" "lab2_bucket" {
   acl    = "public-read"
   bucket = local.bucket_name
-#  policy = data.aws_iam_policy_document.bucket_policy.json
+  policy = data.aws_iam_policy_document.bucket_policy.json
 
   website {
     index_document = "index.html"
@@ -38,7 +38,7 @@ resource "aws_s3_bucket" "lab1_bucket" {
 }
 
 resource "aws_s3_bucket_object" "error_upload" {
-  bucket       = aws_s3_bucket.lab1_bucket.id
+  bucket       = aws_s3_bucket.lab2_bucket.id
   content_type = "text/html"
   key          = "error.html"
   source       = local.error_html
@@ -46,7 +46,7 @@ resource "aws_s3_bucket_object" "error_upload" {
 }
 
 resource "aws_s3_bucket_object" "index_upload" {
-  bucket       = aws_s3_bucket.lab1_bucket.id
+  bucket       = aws_s3_bucket.lab2_bucket.id
   content_type = "text/html"
   key          = "index.html"
   source       = local.index_html
