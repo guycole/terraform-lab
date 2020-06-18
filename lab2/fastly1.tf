@@ -3,51 +3,63 @@
 # Description:
 # Development Environment: OS X 10.13.6/Terraform v0.12.24
 #
-#locals {
-#  conditions = {
-#    ssl = "Request using SSL last priority"
-#    error = "Fastly Error"
-#    block = "Blocked IPs"
-#  }
-#
-#  snippets = [
-#    {
-#      name = "API error envelope"
-#      type = "error"
-#      content = file(""),
-#      enabled = "true"
-#    }
-#  ]
-#
-#  acls = [
-#    name = local.conditions.block,
-#    entries = var.blocked_ips
-#  ]
-#}
-
-curl -X POST -s https://api.fastly.com/service/<Service ID>/version/<Editable Version #>/snippet -H "Fastly-Key:FASTLY_API_TOKEN" -H `fastly-cookie` -H 'Content-Type: application/x-www-form-urlencoded'
---data $'name=my_regular_snippet&type=recv&dynamic=0&content=if ( req.url ) {\n set req.http.my-snippet-test-header = "true";\n}';
+locals {
+  acl_name = "block_list"
+  acl_entries = [
+    {
+      ip      = "1.2.3.4"
+      comment = "block 1"
+    },
+    {
+      ip      = "54.245.143.7"
+      comment = "block 2"
+    }
+  ]
+}
 
 resource "fastly_service_v1" "www" {
   name = "testsvc"
 
   domain {
-    name = "lab2.braingang.net"
+    name    = "lab2.braingang.net"
     comment = "lab2 test"
   }
 
   backend {
-    #address = "https://lab-development-lab2.s3-us-west-2.amazonaws.com"
-    #address = "http://braingang.net.s3-website-us-east-1.amazonaws.com"
     address = "${aws_s3_bucket.lab2_bucket.bucket}.s3-website-${aws_s3_bucket.lab2_bucket.region}.amazonaws.com"
     name    = "AWS S3 hosting"
     port    = 80
   }
 
-  #default_host = "http://braingang.net.s3-website-us-east-1.amazonaws.com"
   default_host = "${aws_s3_bucket.lab2_bucket.bucket}.s3-website-${aws_s3_bucket.lab2_bucket.region}.amazonaws.com"
 
-  force_destroy = true
+  acl {
+    name = local.acl_name
+  }
 
-  blocked_ips = local.blocked_ips
+  force_destroy = true
+}
+
+output "diag1" {
+  value = local.acl_name
+}
+
+resource "fastly_service_acl_entries_v1" "blocked" {
+  service_id = fastly_service_v1.www.id
+
+  acl_id = { for dd in fastly_service_v1.www.acl : dd.name => dd.acl_id }[local.acl_name]
+
+  dynamic "entry" {
+    for_each = [for ee in local.acl_entries : {
+      ip      = ee.ip
+      comment = ee.comment
+    }]
+
+    content {
+      ip      = entry.value.ip
+      subnet  = 22
+      comment = entry.value.comment
+      negated = false
+    }
+  }
 }
