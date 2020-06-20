@@ -1,6 +1,6 @@
 #
 # Title:fastly1.tf
-# Description:
+# Description: create a fastly service to S3, ban some IP address
 # Development Environment: OS X 10.13.6/Terraform v0.12.24
 #
 locals {
@@ -37,6 +37,12 @@ resource "fastly_service_v1" "www" {
     name = local.acl_name
   }
 
+  dynamicsnippet {
+    name     = "tor_killer"
+    type     = "recv"
+    priority = 110
+  }
+
   force_destroy = true
 }
 
@@ -62,4 +68,10 @@ resource "fastly_service_acl_entries_v1" "blocked" {
       negated = false
     }
   }
+}
+
+resource "fastly_service_dynamic_snippet_content_v1" "tor_killer" {
+  service_id = fastly_service_v1.www.id
+  snippet_id = { for s in fastly_service_v1.www.dynamicsnippet : s.name => s.snippet_id }["tor_killer"]
+  content = "if (client.geo.proxy_description ~ \"^tor-\") { error 403; }"
 }
