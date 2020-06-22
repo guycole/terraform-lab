@@ -9,3 +9,5 @@
 ### [lab3](https://github.com/guycole/terraform-lab/tree/master/lab3) vpc w/bastion and web host
 
 ### [lab4](https://github.com/guycole/terraform-lab/tree/master/lab4) api gateway w/lambda and dynamodb
+
+### [lab5](https://github.com/guycole/terraform-lab/tree/master/lab5) primitives
