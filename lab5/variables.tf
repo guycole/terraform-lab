@@ -8,8 +8,8 @@ variable "aws_region" {
   default     = "us-west-2"
 }
 
-variable "source_directory" {
-  description = "source directory"
-  default     = "/Users/gsc/IdeaProjects/terraform-lab/lab5"
-  #  default     = "/home/gsc/github/terraform-lab/lab5"
+variable "lab5_users" {
+  description = "lab5 users"
+  type = set(string)
+  default = ["user1", "user2", "user3"]
 }

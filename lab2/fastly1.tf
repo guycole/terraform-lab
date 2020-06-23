@@ -11,14 +11,14 @@ locals {
       comment = "block 1"
     },
     {
-      ip      = "54.245.143.7"
+      ip      = "38.80.249.101"
       comment = "block 2"
     }
   ]
 }
 
 resource "fastly_service_v1" "www" {
-  name = "testsvc"
+  name = "testsvc-${terraform.workspace}"
 
   domain {
     name    = "lab2.braingang.net"

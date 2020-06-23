@@ -5,7 +5,7 @@
 #
 variable "fastly_api_key" {
   description = "fastly api key"
-  default = "GzlFrLm431Fm39GfIWYC-O1rB9oUBx0l"
+  default = "bogus"
 }
 
 variable "aws_region" {

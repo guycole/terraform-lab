@@ -23,6 +23,6 @@ terraform {
     key                  = "terraform.tfstate"
     profile              = "terraform_braingang"
     region               = "us-west-2"
-    workspace_key_prefix = "terraform-lab"
+    workspace_key_prefix = "terraform-lab2"
   }
 }
