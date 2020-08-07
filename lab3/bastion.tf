@@ -1,5 +1,5 @@
 #
-# Title:bastion.tf
+# Title:bastion1.tf
 # Description: bastion server, only accepts ssh
 # Development Environment: OS X 10.13.6/Terraform v0.12.24
 #

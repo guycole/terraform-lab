@@ -13,3 +13,9 @@
 ### [lab5](https://github.com/guycole/terraform-lab/tree/master/lab5) primitives
 
 ### [lab6](https://github.com/guycole/terraform-lab/tree/master/lab6) static web site w/cloud front
+
+### [lab7](https://github.com/guycole/terraform-lab/tree/master/lab7) AWS KOPS
+
+### [lab8](https://github.com/guycole/terraform-lab/tree/master/lab8) AWS RedShift
+
+### [lab9](https://github.com/guycole/terraform-lab/tree/master/lab9) AWS Transit GW
