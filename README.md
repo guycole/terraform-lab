@@ -2,20 +2,22 @@
 
 ### Terraform Experiments
 
-### [lab1](https://github.com/guycole/terraform-lab/tree/master/lab1) static web site
+### [lab1](https://github.com/guycole/terraform-lab/tree/master/lab01) static web site
 
-### [lab2](https://github.com/guycole/terraform-lab/tree/master/lab2) static web site w/aws and fastly providers
+### [lab2](https://github.com/guycole/terraform-lab/tree/master/lab02) static web site w/aws and fastly providers
 
-### [lab3](https://github.com/guycole/terraform-lab/tree/master/lab3) vpc w/bastion and web host
+### [lab3](https://github.com/guycole/terraform-lab/tree/master/lab03) vpc w/bastion and web host
 
-### [lab4](https://github.com/guycole/terraform-lab/tree/master/lab4) api gateway w/lambda and dynamodb
+### [lab4](https://github.com/guycole/terraform-lab/tree/master/lab04) api gateway w/lambda and dynamodb
 
-### [lab5](https://github.com/guycole/terraform-lab/tree/master/lab5) primitives
+### [lab5](https://github.com/guycole/terraform-lab/tree/master/lab05) primitives
 
-### [lab6](https://github.com/guycole/terraform-lab/tree/master/lab6) static web site w/cloud front
+### [lab6](https://github.com/guycole/terraform-lab/tree/master/lab06) static web site w/cloud front
 
-### [lab7](https://github.com/guycole/terraform-lab/tree/master/lab7) AWS KOPS
+### [lab7](https://github.com/guycole/terraform-lab/tree/master/lab07) AWS KOPS
 
-### [lab8](https://github.com/guycole/terraform-lab/tree/master/lab8) AWS RedShift
+### [lab8](https://github.com/guycole/terraform-lab/tree/master/lab08) AWS RedShift
 
 ### [lab9](https://github.com/guycole/terraform-lab/tree/master/lab9) AWS Transit GW
+
+### [lab10](https://github.com/guycole/terraform-lab/tree/master/lab10) AWS VPC peering
