@@ -21,3 +21,7 @@
 ### [lab9](https://github.com/guycole/terraform-lab/tree/master/lab9) AWS Transit GW
 
 ### [lab10](https://github.com/guycole/terraform-lab/tree/master/lab10) AWS VPC peering
+
+### [lab11](https://github.com/guycole/terraform-lab/tree/master/lab11) AWS EKS
+
+### [lab12](https://github.com/guycole/terraform-lab/tree/master/lab12) AWS IAM
