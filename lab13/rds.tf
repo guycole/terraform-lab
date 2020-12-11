@@ -19,3 +19,6 @@ resource "aws_db_instance" "postgres" {
   password             = "bigsekret"
 }
 
+resource "aws_db_parameter_group" "test" {
+  family = "postgres9.16.19"
+}
