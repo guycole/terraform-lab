@@ -18,7 +18,7 @@
 
 ### [lab8](https://github.com/guycole/terraform-lab/tree/master/lab08) AWS RedShift
 
-### [lab9](https://github.com/guycole/terraform-lab/tree/master/lab9) AWS Transit GW
+### [lab9](https://github.com/guycole/terraform-lab/tree/master/lab09) AWS Transit GW
 
 ### [lab10](https://github.com/guycole/terraform-lab/tree/master/lab10) AWS VPC peering
 

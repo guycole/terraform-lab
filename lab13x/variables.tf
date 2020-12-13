@@ -8,12 +8,8 @@ variable "aws_region" {
   default     = "us-west-2"
 }
 
-variable "key_pair" {
-  description = "ec2 key pair name"
-  default     = "lab13-ore"
-}
-
-variable "key_pair_path" {
-  description = "fully qualified file name"
-  default     = "/Users/gsc/Downloads/lab13-ore.pem"
+variable "source_directory" {
+  description = "source directory"
+  default     = "/Users/gsc/IdeaProjects/terraform-lab/lab4"
+  #  default     = "/home/gsc/github/terraform-lab/lab4"
 }
