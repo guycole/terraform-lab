@@ -25,7 +25,7 @@ resource "aws_security_group" "postgres_sg" {
 }
 
 resource "aws_db_subnet_group" "postgres" {
-  name       = "jaded-traveler"
+  name       = "lab13"
   subnet_ids = [module.vpc.private_subnets[0], module.vpc.private_subnets[1]]
 }
 
@@ -34,9 +34,9 @@ resource "aws_db_instance" "postgres" {
   db_subnet_group_name   = aws_db_subnet_group.postgres.name
   engine                 = "postgres"
   engine_version         = "9.6.19"
-  identifier             = "traveler-db"
+  identifier             = "lab-db"
   instance_class         = "db.t2.micro"
-  name                   = "traveler"
+  name                   = "lab13"
   skip_final_snapshot    = true
   storage_encrypted      = false
   storage_type           = "gp2"
