@@ -1,5 +1,5 @@
 #
-# Title:bastion1.tf
+# Title:bastion.tf
 # Description: bastion server, only accepts ssh
 # Development Environment: OS X 11.0.1/Terraform v0.13.2
 #
@@ -96,20 +96,21 @@ resource "aws_instance" "bastion" {
     command = "echo ${aws_instance.bastion.public_ip} > bastion_ip.txt"
   }
 
-#  provisioner "remote-exec" {
-#    connection {
-#      type        = "ssh"
-#      user        = "ec2-user"
-#      host        = aws_instance.bastion.public_ip
-#      private_key = file(var.key_pair_path)
-#    }
-#
-#    inline = [
-#      "sudo yum -y update",
-#      "sudo yum -y install git",
-#      "sudo yum -y install python3",
-#    ]
-#  }
+  provisioner "remote-exec" {
+    connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      host        = aws_instance.bastion.public_ip
+      private_key = file(var.key_pair_path)
+    }
+
+    inline = [
+      "sudo yum -y update",
+      "sudo yum -y install git",
+      "sudo yum -y install python3",
+      "sudo yum -y install postgresql",
+    ]
+  }
 
   tags = {
     Environment = terraform.workspace

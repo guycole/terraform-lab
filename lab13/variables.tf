@@ -17,3 +17,8 @@ variable "key_pair_path" {
   description = "fully qualified file name"
   default     = "/Users/gsc/Downloads/lab13-ore.pem"
 }
+
+variable "local_lambda_path" {
+  description = "path to local zip files"
+  default     = "/Users/gsc/Documents/github/terraform-lab/lab13/lambda"
+}
