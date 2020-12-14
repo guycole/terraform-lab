@@ -41,9 +41,6 @@ def lambda_handler(event, context):
 if __name__ == "__main__":
     print('main noted')
 
-#    logger = logging.getLogger()
-#    logger.setLevel(Personality.get_logging_level())
-
 # ;;; Local Variables: ***
 # ;;; mode:python ***
 # ;;; End: *** 

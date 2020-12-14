@@ -15,11 +15,4 @@ cp ../test_lambda.py .
 cp -R $PG_REPO/psycopg2-3.8 psycopg2
 zip -r9 ../test-lambda.zip *
 popd
-#zip ../test-lambda.zip *.py
-#zip test-lambda.zip *.py psycopg2/*
-#
-#pushd venv/lib/python3.8/site-packages
-#cp ../../../../test_lambda.py .
-#zip -r9 ../../../../test-lambda.zip *
-#popd
 #

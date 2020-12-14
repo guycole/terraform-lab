@@ -15,15 +15,15 @@ resource "aws_lambda_function" "lambda_deploy" {
   role             = aws_iam_role.lambda_assumable_role.arn
   runtime          = "python3.8"
   source_code_hash = filebase64sha256(local.local_file_name)
-  timeout = 8
+  timeout          = 8
 
   vpc_config {
-    subnet_ids = [module.vpc.private_subnets[0], module.vpc.private_subnets[1]]
+    subnet_ids         = [module.vpc.private_subnets[0], module.vpc.private_subnets[1]]
     security_group_ids = [aws_security_group.postgres_sg.id]
   }
 
   tags = {
-    project   = "test"
+    project = "test"
   }
 }
 
