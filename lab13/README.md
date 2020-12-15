@@ -24,6 +24,6 @@ Here are the steps necessary to recreate lab13 experiment
     * Update lambda/lambda_build.sh for correct awslambda-psycopg2 repo path
     * Invoke lambda/lambda_build.sh to create fresh lambda deployment zip
 6. terraform apply to redploy lambda
-7. Invoke the lambda, not matter how, web console is OK
+7. Invoke the lambda (not matter how, web console is OK)
     * lambda execution should succeed
-8. proof of success is in cloudwatch which contains the contents of the test1 table as "[(1, 2), (3, 4)]"
+8. Proof of success is in cloudwatch which (should) contain the contents of the test1 table as "[(1, 2), (3, 4)]"
