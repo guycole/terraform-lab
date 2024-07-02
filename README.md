@@ -29,3 +29,5 @@
 ### [lab13](https://github.com/guycole/terraform-lab/tree/master/lab13) AWS RDS w/lambda
 
 ### [lab14](https://github.com/guycole/terraform-lab/tree/master/lab14) GCP 
+
+### [lab15](https://github.com/guycole/terraform-lab/tree/master/lab15) Azure
