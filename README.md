@@ -12,7 +12,7 @@
 
 ### [lab5](https://github.com/guycole/terraform-lab/tree/master/lab05) primitives
 
-### [lab6](https://github.com/guycole/terraform-lab/tree/master/lab06) static web site w/cloud front
+### [lab6](https://github.com/guycole/terraform-lab/tree/master/lab06) s3 encryption test
 
 ### [lab7](https://github.com/guycole/terraform-lab/tree/master/lab07) AWS KOPS
 
